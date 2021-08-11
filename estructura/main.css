@@ -1,0 +1,50 @@
+:root {
+    --main-width: 68.75em;
+    --height-header: calc(60 * 1em / 16);
+    --height-section: 21.875em;
+  }
+/* 16px = 1em
+400px ->Xem
+regla de tres: 400*1/16 em
+*/
+.main {
+    max-width: var(--main-width);
+    width: 100%;
+    background-color: #24103B;
+    margin: 0 auto;
+}
+
+.section0 {
+    width: 100%;
+    padding-top: var(--height-header);
+    height: var(--height-section);
+    background-color: antiquewhite;
+    position: relative;
+    box-sizing: border-box;
+}
+.section0:nth-child(odd) {
+    background-color: thistle;
+}
+
+#login {
+    background-color: white;
+    min-width: 45%;
+    width: 40%;
+    /* height: 100%; */
+    border: 2px solid salmon;
+    /* float: right; */
+    /* display: flex; */
+    position: absolute;
+    right: 0%;
+    height: calc(var(--height-section) - var(--height-header));
+}
+
+.header {
+    max-width: var(--main-width);
+    width: 100%;
+    height: var(--height-header);
+    background-color: skyblue;
+    /* para fijar bar */
+    z-index: 99;
+    position: fixed;
+}
