@@ -9,6 +9,7 @@
     --min-width: calc(320*1em/16);
     --height-header: calc(50 * 1em / 16);
     --height-section0: calc(350 * 1em / 16);
+    --min-height: calc(200 * 1em /16);
     --max-height: calc(380 *1em/16);
 }
 body{
@@ -20,24 +21,27 @@ body{
 	margin: 5px auto;
 }
 .cntMayor{
-width: 100%;
-max-width: var(--max-width);
-min-width:var(--min-width);
-display: inline-flex;
-flex-direction: column;
-font-family:'Montserrat','miFuente','G-Montserrat';
-background-color:#352384;
-color: white;
-position:relative;
+    width: 100%;
+    max-width: var(--max-width);
+    min-width:var(--min-width);
+    display: inline-flex;
+    flex-direction: column;
+    font-family:'Montserrat','miFuente','G-Montserrat';
+    background-color:#352384;
+    color: white;
+    position:relative;
 }
 .seccion0{
 	background-image: url('../assets/images/hero.gif'); 
-	min-height:var(--height-section0);
+	height:var(--height-section0);
 	width: 100%;
 	box-sizing: border-box;
 	background-repeat: no-repeat;
-	background-size: 100% 400px;
+	background-size: 100% 100%;
 	position: relative;
+}
+.fa-bars{
+    display: none;
 }
 header{
 	width: 100%;
@@ -45,7 +49,7 @@ header{
 	/*min-height: 400px;*/
     min-height:var(--height-header);
     z-index: 99;
-    /*position: fixed;*/
+    position: fixed;
     background-image: url('../assets/images/hero.gif');
     background-repeat: no-repeat;
     background-size: 100% 400px;
@@ -67,7 +71,6 @@ header{
     background: white;
     right: 0%;
     box-sizing: border-box; 
-	/*height: calc(var(--height-section0) - var(--height-header));*/
 	height: 275px;
 	bottom: 0px;
 }
@@ -217,6 +220,16 @@ footer{
     padding: 10px 5px;
     margin: 50px;
 }
+.cajas h3{
+    font-size: 1.2em;
+    text-transform: capitalize;
+    font-weight: 100;
+    margin: 20px auto;
+}
+.cajas span{
+    text-transform: uppercase;
+    font-size: 2em;
+}
 .contApps{
 	width: 150px;
     margin: 10px;
@@ -230,16 +243,6 @@ footer{
 }
 .fa-facebook, .fa-instagram, .fa-twitter{
 	font-size: 2em;
-}
-.cajas h3{
-	font-size: 1.2em;
-    text-transform: capitalize;
-    font-weight: 100;
-    margin: 20px auto;
-}
-.cajas span{
-	text-transform: uppercase;
-    font-size: 2em;
 }
 #iconFooter{
        width: 100%;
@@ -262,17 +265,21 @@ footer{
 h3:hover{
 	color:#FF00BF; 
 }
-.fa-bars{
-    display: none;
-}
 @media (min-width: 320px) and (max-width: 900px){
     #mayor{
-    background-color: blue;
-    width: 100%;
+        background-color: blue;
+        width: 100%;
     }
     body{
-    background-color: #50227A;
-    width: 100%;  
+        background-color: #50227A;
+        width: 100%;  
+    }
+    .seccion0{
+        height: var(--min-height);
+        background-size: 100% 100%;
+    }
+    header{
+        width: 100%
     }
     .opciones, #login{
         display: none;
@@ -280,13 +287,31 @@ h3:hover{
     .fa-bars{
         display: inline-block;
     }
-    .conTextSec{
-    font-size: 0.8em;
-    min-height: 200px;
+     #seccion1{
+        display: flex;
+        width: 100%;
+        box-sizing: border-box;
+        flex-direction: column;
+    }
+    .secContn1{
+        text-transform: capitalize;
+        font-size: 0.7em;
+        margin: 0px auto;
+        inline-size: fit-content;
+        height: auto;
+    }
+    #imgCel{
+    font-size: 50%;
     margin: 0px auto;
-    text-align: center;
     inline-size: fit-content;
-    min-height: auto;
+    }
+    .conTextSec{
+        font-size: 0.8em;
+        min-height: 200px;
+        margin: 0px auto;
+        text-align: center;
+        inline-size: fit-content;
+        min-height: auto;
     }
     .seccion234, .videos, .seccion0{
         width: 100%;
@@ -294,91 +319,69 @@ h3:hover{
         flex-direction: column;
     }
     .videos{
-            height: auto;
-    margin: 0px auto;
-    width: fit-content;
-    }
-    header{
-        width: 100%
-    }
-    #seccion1{
-    display: flex;
-    width: 100%;
-    box-sizing: border-box;
-    flex-direction: column;
+        height: auto;
+        margin: 0px auto;
+        width: fit-content;
     }
     .textos, .textos p{
         margin: 8px 0px 0px;
-    }
-    .secContn1{
-    text-transform: capitalize;
-    font-size: 0.7em;
-    margin: 0px auto;
-    inline-size: fit-content;
-    height: auto;
-    }
-    #imgCel{
-    font-size: 50%;
-    margin: 0px auto;
-    inline-size: fit-content;
     }
     #seccion3{
         width: 100%;
         display: flex;
         flex-direction: column-reverse; 
     }
+    footer{
+        min-height: auto;
+    }
     .caja123 h3{
         display: none;
     }
     .cajas, #apps{
-            display: flex;
-    flex-direction: column;
+        display: flex;
+        flex-direction: column;
     }
     .cajas:hover{
         color:#FF00BF;
     }
     .caja123, #apps{
         margin: 10px 10px 0px;
-    font-size: 0.5em;
-    padding: 3px;
+        font-size: 0.5em;
+        padding: 3px;
     }
     .cajas span{
         border-bottom: outset;
     }
     #apps{
-            display: flex;
-    flex-direction: column;
-    }
-    .img{
-   width: 50%;
-    height: auto;
-    margin: 10px auto 0px;
-    border-radius: 20px;
+        display: flex;
+        flex-direction: column;
     }
     .contApps{
-   display: flex;
-    flex-direction: column;
-    align-items: center;
-    margin: 0px auto;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin: 0px auto;
     }
-    footer{
-        min-height: auto;
+    .img{
+        width: 50%;
+        height: auto;
+        margin: 10px auto 0px;
+        border-radius: 20px;
+    }
+    #iconFooter{
+        border-bottom: none;
+        display: flex;
+        flex-direction: column;
+        width: 100%;
     }
     .iconoss{
         font-size: 0.6em;
-    margin: 40px auto 0px;
+        margin: 40px auto 0px;
     }
     .ultimoSpan{
         border-top: none;
         font-size: 0.6em;
     }
-    #iconFooter{
-    border-bottom: none;
-    display: flex;
-    flex-direction: column;
-    width: 100%;
-    }
-
 }
 
 /*
