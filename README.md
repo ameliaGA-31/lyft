@@ -46,9 +46,9 @@ El reto consistia en replicar el sitio de **Lyft**,que incluye estructura de car
   * Libreria externa para tipografia.
 
 ## Resultado Replica
-![Imagen](assets/images/parte1.png)
-![Imagen](assets/images/parte2.png)
-![Imagen](assets/images/parte3.png)
+![Imagen](assets/images/parte1.jpg)
+![Imagen](assets/images/parte2.jpg)
+![Imagen](assets/images/parte3.jpg)
 
 
 
